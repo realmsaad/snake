@@ -1,0 +1,64 @@
+body{
+    background:#222;
+    display:grid;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial;
+}
+
+.board{
+    width:600px;
+    height:600px;
+    display:grid;
+    grid-template-columns:repeat(10,1fr);
+    grid-template-rows:repeat(10,1fr);
+    position:relative;
+    border:10px solid #333;
+}
+
+
+.cell{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:14px;
+    color:#fff;
+}
+
+
+.cell:nth-child(6n+1){background:#ff595e;}
+.cell:nth-child(6n+2){background:#ffca3a;}
+.cell:nth-child(6n+3){background:#8ac926;}
+.cell:nth-child(6n+4){background:#1982c4;}
+.cell:nth-child(6n+5){background:#6a4c93;}
+.cell:nth-child(6n+6){background:#ff924c;}
+
+
+.board .cell:nth-child(n+11):nth-child(-n+20),
+.board .cell:nth-child(n+31):nth-child(-n+40),
+.board .cell:nth-child(n+51):nth-child(-n+60),
+.board .cell:nth-child(n+71):nth-child(-n+80),
+.board .cell:nth-child(n+91):nth-child(-n+100){
+    direction: rtl;
+}
+
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+
+.ladder{
+    stroke:#8b5a2b;
+    stroke-width:10;
+}
+
+.step{
+    stroke:#d2a679;
+    stroke-width:8;
+}
